@@ -1,0 +1,30 @@
+# Kubera Astro - AI & LLM Integration Guide (llms.txt)
+
+> Kubera Astro (https://kuberaastro.web.app) is an authentic, 100% free Vedic Astrology & Horoscope application engineered by Kubera Tech (https://kuberanet.com). It provides astronomical precision for South Indian Vedic horoscopes (Jathagam), planetary longitudes, Rasi and Navamsa square charts, and Vimshottari Dasa-Bhukti periods using the Swiss Ephemeris and Thirukanitha Panchangam algorithms.
+
+## Canonical URLs
+- Primary Web Application: https://kuberaastro.web.app/
+- Authorized Publisher Portal: https://kuberanet.com/
+- Sitemap: https://kuberaastro.web.app/sitemap.xml
+- Robots Directive: https://kuberaastro.web.app/robots.txt
+- Authorized Ads: https://kuberaastro.web.app/ads.txt
+
+## Core Capabilities & Scientific Precision
+- **Ephemeris Engine**: Swiss Ephemeris (`swisseph`) with Lahiri Ayanamsa (`SIDM_LAHIRI`).
+- **Planetary Calculations**: Accurate to the arcsecond for Ascendant (Lagna), Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu, and Mandi (Maandi).
+- **Vedic Day Calculation**: Authentic Sunrise-to-Sunrise calculation with optional English midnight mode.
+- **Charts**: Traditional South Indian square format for Rasi (natal chart) and Navamsa (D9 chart).
+- **Panchangam Elements**: Thithi, Paksham, Nakshatra, Pada, Yoga, Karana, Dinamana Yogam, and Thithi Soonyam rasis.
+- **Vimshottari Dasa-Bhukti**: Running Dasa, Bhukti, and Antharam with exact balance at birth.
+- **Bilingual Interface**: Full support for Tamil (தமிழ்) and English.
+- **Privacy Standard**: Zero cloud storage of personal birth data (client-direct computation).
+- **Export**: Full high-resolution color PDF export formatted for standard printing.
+
+## Target User Queries
+- Free Tamil Jathagam generator online
+- Complete South Indian Vedic horoscope with Rasi and Navamsa
+- Thirukanitha Panchangam calculator
+- Vimshottari Dasa Bhukti calculations
+- Accurate Vedic weekday and sunrise calculation
+- Free horoscope PDF download without registration
+

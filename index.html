@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ta">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubera Astro | 100% இலவச ஜாதகம் - Free Vedic Horoscope & Astrology Engine</title>
+  <meta name="description"
+    content="100% இலவச தமிழ் மற்றும் ஆங்கில ஜாதகம். துல்லியமான ராசி, நவாம்சம் கட்டங்கள், கிரக நிலைகள் மற்றும் தசா புத்தி கணிப்புகள். Generate and download complete colorful Vedic Horoscope PDF instantly for free.">
+  <meta name="keywords"
+    content="free jathagam, tamil jathagam, horoscope in tamil, rasi navamsam, thasa puthi, dasa bhukti, kubera astro, astrology calculator, thirukanitha panchangam, birth chart generator, online horoscope pdf">
+  <meta name="author" content="Kubera Tech">
+  <meta name="google-site-verification" content="google67098528b4c1a825">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://kuberaastro.web.app/">
+
+  <!-- OpenGraph Metadata (Facebook / LinkedIn) -->
+  <meta property="og:title" content="Kubera Astro | 100% இலவச ஜாதகம் - Free Vedic Horoscope">
+  <meta property="og:description"
+    content="முழுமையான ராசி, நவாம்சம் கட்டங்கள், கிரக நிலைகள் மற்றும் தசா புத்தி கணிப்புகள் 100% இலவசம்! Instant South Indian Vedic Horoscope PDF.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kuberaastro.web.app/">
+  <meta property="og:image" content="https://kuberaastro.web.app/assets/ganesha.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kubera Astro | 100% இலவச ஜாதகம் - Free Vedic Horoscope">
+  <meta name="twitter:description"
+    content="முழுமையான ராசி, நவாம்சம் கட்டங்கள், கிரக நிலைகள் மற்றும் தசா புத்தி கணிப்புகள் 100% இலவசம்! Instant South Indian Vedic Horoscope PDF.">
+  <meta name="twitter:image" content="https://kuberaastro.web.app/assets/ganesha.png">
+
+  <!-- Structured Data JSON-LD (Schema.org for Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://kuberaastro.web.app/#webapp",
+        "name": "Kubera Astro",
+        "url": "https://kuberaastro.web.app/",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "description": "100% Free Complete Vedic Astrology Software generating Thirukanitha Panchangam planetary positions, Rasi and Navamsa square charts, and Vimshottari Dasa-Bhukthi calculations.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Kubera Tech",
+          "url": "https://kuberanet.com"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kuberaastro.web.app/#website",
+        "url": "https://kuberaastro.web.app/",
+        "name": "Kubera Astro",
+        "description": "Free Complete Vedic Astrology & Jathagam Generator"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3630745343330502"
+    crossorigin="anonymous"></script>
+
+  <!-- Google Analytics GA4 (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSRZKWEHYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PSRZKWEHYE');
+  </script>
+
+  <!-- PWA & Mobile Web Capabilities -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f59e0b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kubera Astro">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700;800&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- PDF Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Firebase SDKs (v8 Compat for robust, zero-dependency anonymous auth) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+  <!-- Modular Styles -->
+  <link rel="stylesheet" href="/styles/variables.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/header_nav.css">
+  <link rel="stylesheet" href="/styles/astro_charts.css">
+  <link rel="stylesheet" href="/styles/porutham.css">
+  <link rel="stylesheet" href="/styles/donation.css">
+  <link rel="stylesheet" href="/styles/articles.css">
+  <link rel="stylesheet" href="/styles/ai_consultant.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/theme_light.css">
+</head>
+
+<body>
+
+  <!-- Top Global Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="brand-wrapper">
+        <img src="/assets/ganesha.png" alt="Ganesha Emblem" class="brand-emblem">
+        <div>
+          <div class="brand-title">KUBERA <span>ASTRO</span></div>
+          <span class="brand-tagline">100% Free Complete Vedic Horoscope</span>
+        </div>
+      </a>
+      <!-- Mobile Burger Toggle Button -->
+      <button type="button" class="btn-burger-menu" aria-label="Open Navigation Menu"
+        onclick="window.MobileDrawer?.openDrawer()">
+        ☰
+      </button>
+      <div class="header-actions">
+        <button type="button" class="btn-desktop-version" onclick="window.PWAController?.forceUpdateAndClearCache()"
+          title="Click to clear cache and reload latest version">
+          <span>🔄 v5.1</span>
+        </button>
+        <div class="lang-toggle-wrapper"
+          style="display: flex; align-items: center; background: rgba(255,255,255,0.06); border: 1px solid var(--border-glow); border-radius: var(--radius-pill); padding: 2px;">
+          <button type="button" id="btn-lang-ta" class="lang-btn is-active"
+            onclick="window.AstroClient?.setLanguage('ta')"
+            style="border:none; background:var(--accent-gold); color:#070a14; font-weight:800; font-size:0.75rem; padding:0.25rem 0.65rem; border-radius:var(--radius-pill); cursor:pointer;">தமிழ்</button>
+          <button type="button" id="btn-lang-en" class="lang-btn" onclick="window.AstroClient?.setLanguage('en')"
+            style="border:none; background:transparent; color:var(--text-muted); font-weight:800; font-size:0.75rem; padding:0.25rem 0.65rem; border-radius:var(--radius-pill); cursor:pointer;">English</button>
+        </div>
+        <button type="button" id="btn-theme-toggle" onclick="window.ThemeManager?.toggleTheme()"
+          style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-glow); border-radius: var(--radius-pill); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 800; cursor: pointer; color: var(--text-primary); transition: var(--transition-smooth);">
+          🌙 Dark
+        </button>
+        <button type="button" id="btn-pwa-install" onclick="window.PWAController?.promptInstallApp()"
+          style="display: none; align-items: center; gap: 0.35rem; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--border-cyan); color: var(--accent-cyan); border-radius: var(--radius-pill); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 800; cursor: pointer; transition: var(--transition-smooth);">
+          📲 Install App
+        </button>
+        <button class="btn-patronage" onclick="window.PatronageModal?.openModal()">
+          ⭐ Pay me if you find worth
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-out Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <div class="mobile-drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-brand">
+          <img src="/assets/ganesha.png" alt="Ganesha">
+          <div class="drawer-title">KUBERA <span>ASTRO</span></div>
+        </div>
+        <button type="button" class="btn-drawer-close" aria-label="Close Navigation"
+          onclick="window.MobileDrawer?.closeDrawer()">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="drawer-item-group">
+          <span class="drawer-item-label" id="lbl-drawer-version">பதிப்பு &amp; புதுப்பித்தல் (v5.1)</span>
+          <button type="button" id="drawer-check-update" class="drawer-btn"
+            onclick="window.PWAController?.forceUpdateAndClearCache();"
+            style="background: rgba(245, 158, 11, 0.12); color: var(--accent-gold-bright); border-color: rgba(245, 158, 11, 0.4);">
+            🔄 Clear Cache &amp; Update
+          </button>
+        </div>
+        <div class="drawer-item-group">
+          <span class="drawer-item-label">மொழித் தேர்வு</span>
+          <div class="drawer-lang-toggle">
+            <button type="button" id="drawer-lang-ta" class="is-active"
+              onclick="window.AstroClient?.setLanguage('ta'); window.MobileDrawer?.closeDrawer()">தமிழ்</button>
+            <button type="button" id="drawer-lang-en"
+              onclick="window.AstroClient?.setLanguage('en'); window.MobileDrawer?.closeDrawer()">English</button>
+          </div>
+        </div>
+
+        <div class="drawer-item-group">
+          <span class="drawer-item-label">தோற்றம்</span>
+          <button type="button" id="drawer-theme-toggle" class="drawer-btn drawer-btn-theme"
+            onclick="window.ThemeManager?.toggleTheme()">
+            🌙 Dark
+          </button>
+        </div>
+
+        <div class="drawer-item-group">
+          <span class="drawer-item-label">செயலி நிறுவல்</span>
+          <button type="button" id="drawer-pwa-install" class="drawer-btn drawer-btn-pwa"
+            onclick="window.PWAController?.promptInstallApp(); window.MobileDrawer?.closeDrawer()"
+            style="display: none;">
+            📲 Install Kubera Astro App
+          </button>
+        </div>
+
+        <div class="drawer-item-group">
+          <span class="drawer-item-label">விருப்ப ஆதரவு</span>
+          <button type="button" class="drawer-btn drawer-btn-patronage"
+            onclick="window.PatronageModal?.openModal(); window.MobileDrawer?.closeDrawer()">
+            ⭐ Pay me if you find worth
+          </button>
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        100% Free Complete Vedic Horoscope<br>
+        <strong style="color:var(--accent-gold-bright)">kuberaastro.web.app</strong> • <strong>kuberanet.com</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="main-layout">
+
+    <!-- Top Banner & Motto -->
+    <section class="hero-banner">
+      <div class="hero-badge">🕉️ வேத ஜோதிட கணிப்பு முறை • 100% இலவசம்</div>
+      <h1 class="hero-title">உங்கள் முழுமையான <span>ஜாதகம்</span> உடனடியாக கணிக்க</h1>
+      <p class="hero-subtitle">
+        பிறந்த தேதி, நேரம் மற்றும் ஊர் குறிப்பிட்டவுடன் துல்லியமான ராசி கட்டம், நவாம்சம், கிரக பாகைகள் மற்றும் முழுமையான
+        தசா புத்தி அட்டவணையை உடனடியாக இலவசமாக பெறுங்கள்.
+      </p>
+    </section>
+
+    <!-- Top Tab Navigation: Jathagam vs Porutham vs Numerology vs AI -->
+    <nav class="app-tabs-nav" aria-label="Astrology Module Selection">
+      <button type="button" id="tab-btn-jathagam" class="app-tab-btn active"
+        onclick="window.PoruthamClient?.switchAppTab('jathagam')">
+        <span class="tab-icon">📜</span>
+        <span class="tab-text">Horoscope</span>
+      </button>
+      <button type="button" id="tab-btn-porutham" class="app-tab-btn"
+        onclick="window.PoruthamClient?.switchAppTab('porutham')">
+        <span class="tab-icon">💍</span>
+        <span class="tab-text">Matchmaking</span>
+      </button>
+      <button type="button" id="tab-btn-numerology" class="app-tab-btn"
+        onclick="window.PoruthamClient?.switchAppTab('numerology')">
+        <span class="tab-icon">🔢</span>
+        <span class="tab-text">Numerology</span>
+      </button>
+      <button type="button" id="tab-btn-ai-consultant" class="app-tab-btn"
+        onclick="window.PoruthamClient?.switchAppTab('ai-consultant')">
+        <span class="tab-icon">✨</span>
+        <span class="tab-text">AI Consultant</span>
+      </button>
+    </nav>
+
+    <!-- Main Workspace Grid -->
+    <div id="jathagam-workspace-grid" class="astro-workspace-grid">
+
+      <!-- Left Column: Input Details Form -->
+      <div class="glass-panel">
+        <div class="panel-header">
+          <div id="jathagam-panel-title" class="panel-title">
+            <span>✨</span> பிறப்பு விவரங்கள்
+          </div>
+          <span id="jathagam-panel-secret"
+            style="font-size: 0.68rem; color: var(--accent-gold); font-weight: 700;">விவரங்கள் எங்கும்
+            சேமிக்கப்படுவதில்லை</span>
+        </div>
+
+        <form id="jathagam-input-form"
+          onsubmit="event.preventDefault(); const fd = new FormData(this); window.AstroClient?.requestHoroscopeGeneration(fd);">
+          <div class="form-group">
+            <label class="form-label">பெயர்</label>
+            <input type="text" name="name" class="form-input" placeholder="உதாரணம்: சதீஷ் குமார்" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">தந்தை பெயர்</label>
+              <input type="text" name="father" class="form-input" placeholder="தந்தை பெயர்">
+            </div>
+            <div class="form-group">
+              <label class="form-label">தாய் பெயர்</label>
+              <input type="text" name="mother" class="form-input" placeholder="தாய் பெயர்">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">பாலினம்</label>
+              <select name="gender" class="form-select">
+                <option value="ஆண்">ஆண்</option>
+                <option value="பெண்">பெண்</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">பிறந்த தேதி</label>
+              <input type="date" name="dob" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">பிறந்த நேரம்</label>
+              <input type="time" name="tob" class="form-input" value="10:30" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">நாள் கணக்கீடு</label>
+              <select name="day_calc_mode" class="form-select">
+                <option value="vedic">சூரிய உதயம்</option>
+                <option value="standard">நள்ளிரவு 12 மணி</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="position: relative;">
+            <label class="form-label">பிறந்த இடம்</label>
+            <input type="text" id="birth-place-input" name="place" class="form-input"
+              placeholder="உதாரணம்: Chennai, Madurai, Polur..." autocomplete="off" value="Chennai" required>
+            <div id="place-autocomplete-list" class="autocomplete-dropdown"></div>
+            <input type="hidden" id="birth-lat" name="lat" value="13.0827">
+            <input type="hidden" id="birth-lon" name="lon" value="80.2707">
+            <input type="hidden" id="form-lang-input" name="lang" value="ta">
+          </div>
+
+          <button type="submit" id="btn-submit-generate" class="btn-generate">
+            ⚡ இலவச ஜாதகம் கணிக்க
+          </button>
+          <div id="generation-status"
+            style="display: none; text-align: center; margin-top: 0.65rem; font-size: 0.78rem; color: var(--accent-gold-bright); font-weight: 700;">
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Interactive Results & Live Charts -->
+      <div>
+
+        <!-- Empty State Guide -->
+        <div id="horoscope-empty-state" class="glass-panel" style="text-align: center; padding: 3rem 1.5rem;">
+          <div style="font-size: 3rem; margin-bottom: 0.75rem;">☸️</div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--accent-gold-bright); margin-bottom: 0.45rem;">
+            நவகிரக நிலைகள் & லக்ன கணிப்பு
+          </h2>
+          <p
+            style="font-size: 0.88rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto 1.25rem; line-height: 1.6;">
+            இடது பக்கத்தில் உங்கள் பிறந்த தேதி, நேரம் மற்றும் ஊர் குறிப்பிட்டு "இலவச ஜாதகம் கணிக்க" பொத்தானை அழுத்தவும்.
+            உங்கள் ராசி மற்றும் நவாம்ச கட்டங்கள் உடனடியாக திரையில் தோன்றும்.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <span class="badge-free">✓ 100% துல்லிய கணிப்பு</span>
+            <span class="badge-free">✓ நவாம்சம் & ராசி</span>
+            <span class="badge-free">✓ தசா புத்தி இருப்பு</span>
+            <span class="badge-free">✓ வண்ண PDF டவுன்லோட்</span>
+          </div>
+        </div>
+
+        <!-- Result Container -->
+        <div id="horoscope-result-card" style="display: none;">
+
+          <!-- Action Toolbar -->
+          <div class="export-toolbar" id="horoscope-toolbar" style="margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.1rem;">📜</span>
+              <strong style="font-size: 0.88rem; color: #fff;">கணிக்கப்பட்ட ஜாதக அறிக்கை</strong>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
+              <button id="btn-download-pdf" class="btn-pdf-download" onclick="window.ChartRenderer?.downloadFullPdf()">
+                📥 முழு ஜாதகம் PDF பதிவிறக்குக
+              </button>
+              <button class="btn-patronage" onclick="window.PatronageModal?.openModal()">
+                ⭐ Pay me if you find worth
+              </button>
+            </div>
+          </div>
+
+          <!-- Horoscope Preview Frame -->
+          <div class="glass-panel" style="padding: 1rem;">
+            <div id="horoscope-preview-area"></div>
+          </div>
+
+          <!-- AI Vedic Astrology Consultant Container (#BuildHybridAI) -->
+          <div id="ai-consultant-container"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Matchmaking Workspace (Porutham) -->
+    <div id="porutham-workspace-grid" style="display: none;">
+      <div class="glass-panel" style="margin-bottom: 24px;">
+        <div class="panel-header">
+          <div id="porutham-panel-title" class="panel-title">
+            <span>💍</span> மணமக்கள் விவரங்கள்
+          </div>
+          <span id="porutham-panel-secret"
+            style="font-size: 0.68rem; color: var(--accent-gold); font-weight: 700;">விவரங்கள் எங்கும்
+            சேமிக்கப்படுவதில்லை</span>
+        </div>
+
+        <form id="porutham-input-form"
+          onsubmit="event.preventDefault(); window.PoruthamClient?.calculatePorutham(this);">
+          <div class="porutham-couple-inputs">
+            <!-- Bride (Girl) Details Card -->
+            <div class="couple-input-card bride">
+              <div id="porutham-bride-title" class="couple-card-title">👰 பெண் விவரங்கள்</div>
+              <div class="form-group">
+                <label id="lbl-bride-name" class="form-label">பெயர்</label>
+                <input type="text" name="girl_name" class="form-input" placeholder="பெண் பெயர்" value="செல்வி" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label id="lbl-bride-dob" class="form-label">பிறந்த தேதி</label>
+                  <input type="date" name="girl_dob" class="form-input" value="2000-06-15" required>
+                </div>
+                <div class="form-group">
+                  <label id="lbl-bride-tob" class="form-label">நேரம்</label>
+                  <input type="time" name="girl_tob" class="form-input" value="10:30" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label id="lbl-bride-place" class="form-label">பிறந்த இடம்</label>
+                <div class="autocomplete-container">
+                  <input type="text" id="girl-place-input" name="girl_place" class="form-input"
+                    placeholder="Chennai, Vellore, Madurai..." value="Chennai" required autocomplete="off">
+                  <input type="hidden" id="girl-lat" name="girl_lat" value="13.0827">
+                  <input type="hidden" id="girl-lon" name="girl_lon" value="80.2707">
+                  <div id="girl-place-autocomplete-list" class="autocomplete-dropdown" style="display: none;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Groom (Boy) Details Card -->
+            <div class="couple-input-card groom">
+              <div id="porutham-groom-title" class="couple-card-title">🤵 ஆண் விவரங்கள்</div>
+              <div class="form-group">
+                <label id="lbl-groom-name" class="form-label">பெயர்</label>
+                <input type="text" name="boy_name" class="form-input" placeholder="ஆண் பெயர்" value="செல்வன்" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label id="lbl-groom-dob" class="form-label">பிறந்த தேதி</label>
+                  <input type="date" name="boy_dob" class="form-input" value="1998-04-20" required>
+                </div>
+                <div class="form-group">
+                  <label id="lbl-groom-tob" class="form-label">நேரம்</label>
+                  <input type="time" name="boy_tob" class="form-input" value="08:15" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label id="lbl-groom-place" class="form-label">பிறந்த இடம்</label>
+                <div class="autocomplete-container">
+                  <input type="text" id="boy-place-input" name="boy_place" class="form-input"
+                    placeholder="Vellore, Chennai, Salem..." value="Vellore" required autocomplete="off">
+                  <input type="hidden" id="boy-lat" name="boy_lat" value="12.9165">
+                  <input type="hidden" id="boy-lon" name="boy_lon" value="79.1325">
+                  <div id="boy-place-autocomplete-list" class="autocomplete-dropdown" style="display: none;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-submit-porutham" class="btn-generate" style="margin-top: 1rem;">
+            💍 திருமணப் பொருத்தம் கணிக்க
+          </button>
+          <div id="porutham-status-text" class="status-indicator" style="display: none; margin-top: 10px;"></div>
+        </form>
+      </div>
+
+      <!-- Live Results Section -->
+      <div id="porutham-results-section" style="display: none;">
+        <!-- Verdict Banner -->
+        <div id="live-verdict-card" class="porutham-verdict-card warning"></div>
+
+        <!-- Score Strip -->
+        <div id="live-score-strip" class="porutham-score-strip"></div>
+
+        <!-- 10 / 12 Porutham Table -->
+        <div class="glass-panel" style="margin-bottom: 20px; padding: 16px;">
+          <h3
+            style="color: var(--accent-gold-bright); margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+            <span>📋</span> 10 &amp; 12 பொருத்தங்கள் விரிவான அட்டவணை
+          </h3>
+          <div class="porutham-table-wrap">
+            <table class="porutham-live-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">பொருத்தம் (Porutham)</th>
+                  <th style="width: 20%;">முடிவு (Status)</th>
+                  <th>விளக்கம் &amp; பலன் (Vedic Analysis)</th>
+                </tr>
+              </thead>
+              <tbody id="live-porutham-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Dosha & Planetary Analysis Card -->
+        <div id="live-dosha-box" class="porutham-analysis-box"></div>
+
+        <!-- PDF Export Card -->
+        <div class="export-toolbar" style="margin-top: 16px;">
+          <div>
+            <strong>திருமணப் பொருத்தம் PDF அறிக்கை தயார்</strong>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">
+              வண்ணமயமான ராசி சக்கரங்களுடன் கூடிய A4 ஒற்றைப் பக்க PDF கோப்பை உடனடியாக பதிவிறக்கலாம்.
+            </div>
+          </div>
+          <button type="button" id="btn-download-porutham-pdf" class="btn-pdf-download"
+            onclick="window.PoruthamClient?.downloadPoruthamPdf()">
+            📥 திருமணப் பொருத்தம் PDF பதிவிறக்குக
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Numerology Workspace Grid -->
+    <div id="numerology-workspace-grid" style="display: none;">
+      <div class="glass-panel" style="margin-bottom: 24px;">
+        <div class="panel-header">
+          <div id="num-panel-title" class="panel-title">
+            <span>🔢</span> வேத &amp; சால்டியன் எண் கணித விவரங்கள்
+          </div>
+          <span id="num-panel-secret" style="font-size: 0.68rem; color: var(--accent-gold); font-weight: 700;">விவரங்கள்
+            எங்கும் சேமிக்கப்படுவதில்லை</span>
+        </div>
+        <form id="numerology-input-form" onsubmit="event.preventDefault(); window.NumerologyClient?.runAnalysis();">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label id="lbl-num-name" class="form-label">முழுப் பெயர் (ஆங்கிலத்தில்)</label>
+              <input type="text" id="num_input_name" class="form-input" required value="SATHISH KUMAR"
+                placeholder="உதாரணம்: SATHISH KUMAR">
+            </div>
+            <div class="form-group">
+              <label id="lbl-num-dob" class="form-label">பிறந்த தேதி</label>
+              <input type="date" id="num_input_dob" class="form-input" required value="1992-06-12">
+            </div>
+          </div>
+          <button type="submit" id="btn-num-calculate" class="btn-generate" style="margin-top: 1rem;">
+            🔢 எண் கணிதம் கணிக்க
+          </button>
+          <div id="num-live-loading" class="status-indicator" style="display: none; margin-top: 10px;">⏳ எண் கணிதம்
+            கணிக்கப்படுகிறது...</div>
+        </form>
+      </div>
+
+      <!-- Numerology Results Section -->
+      <div id="numerology-results-box" style="display: none;">
+        <div id="num-res-verdict-box" class="porutham-verdict-card success" style="margin-bottom: 16px;"></div>
+
+        <!-- 3 Cards -->
+        <div class="porutham-score-strip" style="margin-bottom: 20px;">
+          <div class="score-card">
+            <span id="num-card-birth-lbl" class="score-lbl">பிறவி எண் (மூல எண்)</span>
+            <span id="num-res-birth-val" class="score-val" style="color: var(--accent-gold);">0</span>
+            <span id="num-res-birth-sub" style="font-size: 0.8rem; color: #aaa;">-</span>
+          </div>
+          <div class="score-card">
+            <span id="num-card-destiny-lbl" class="score-lbl">விதி எண் (பாக்கிய எண்)</span>
+            <span id="num-res-destiny-val" class="score-val" style="color: var(--accent-gold);">0</span>
+            <span id="num-res-destiny-sub" style="font-size: 0.8rem; color: #aaa;">-</span>
+          </div>
+          <div class="score-card">
+            <span id="num-card-name-lbl" class="score-lbl">பெயர் எண் (நாம எண்)</span>
+            <span id="num-res-name-val" class="score-val" style="color: var(--accent-gold);">0</span>
+            <span id="num-res-name-sub" style="font-size: 0.8rem; color: #aaa;">-</span>
+          </div>
+        </div>
+
+        <!-- Numerology Analysis Table -->
+        <div class="glass-panel" style="margin-bottom: 20px; padding: 16px;">
+          <h3 id="num-table-title"
+            style="color: var(--accent-gold-bright); margin-bottom: 12px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+            <span>📖</span> எண் கணித விரிவான தத்துவ பலன்கள்
+          </h3>
+          <div class="porutham-table-wrap">
+            <table class="porutham-live-table">
+              <thead>
+                <tr>
+                  <th id="num-th-aspect" style="width: 25%;">அம்சம்</th>
+                  <th id="num-th-number" style="width: 12%; text-align: center;">எண்</th>
+                  <th id="num-th-planet" style="width: 20%;">கிரகம்</th>
+                  <th id="num-th-traits">தத்துவ குணங்கள்</th>
+                </tr>
+              </thead>
+              <tbody id="num-res-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Favorable Attributes Panel -->
+        <div class="porutham-analysis-box" style="margin-bottom: 20px;">
+          <h4 id="num-fav-heading" style="color: var(--accent-gold); margin-bottom: 10px;">🍀 அதிர்ஷ்டக் காரணிகள் &amp;
+            இணக்கத்தன்மை</h4>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; font-size: 0.9rem;">
+            <div><strong id="num-lbl-colors">வண்ணங்கள்:</strong> <span id="num-res-colors">-</span></div>
+            <div><strong id="num-lbl-gems">ரத்தினம்:</strong> <span id="num-res-gems">-</span></div>
+            <div><strong id="num-lbl-days">கிழமைகள்:</strong> <span id="num-res-days">-</span></div>
+            <div><strong id="num-lbl-friends">நட்பு எண்கள்:</strong> <span id="num-res-friends">-</span></div>
+            <div><strong id="num-lbl-enemies">தவிர்க்க வேண்டியவை:</strong> <span id="num-res-enemies">-</span></div>
+          </div>
+        </div>
+
+        <!-- PDF Export Card -->
+        <div class="glass-panel" style="text-align: center; padding: 20px; margin-bottom: 24px;">
+          <h3 id="num-pdf-card-title" style="color: var(--accent-gold-bright); margin-bottom: 8px;">📄 அதிகாரப்பூர்வ எண்
+            கணித அறிக்கை PDF</h3>
+          <p id="num-pdf-card-desc" style="font-size: 0.85rem; color: #aaa; margin-bottom: 14px;">1-பக்க அதிகாரப்பூர்வ
+            வடிவமைப்புடன் உடனடியாக அச்சிட்டுப் பதிவிறக்குங்கள்.</p>
+          <button type="button" id="btn-download-numerology-pdf" class="btn-pdf-download"
+            onclick="window.NumerologyClient?.downloadNumerologyPdf()">
+            📥 எண் கணித அறிக்கை PDF பதிவிறக்குக
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Standalone AI Vedic Consultant Workspace Grid (#BuildHybridAI) -->
+    <div id="ai-consultant-workspace-grid" style="display: none;">
+      <div id="ai-standalone-consultant-container"></div>
+    </div>
+
+    <!-- Editorial Knowledge & Vedic Astrology Articles (Google AdSense Content Compliance) -->
+    <section class="astrology-articles-section" aria-label="Vedic Astrology Knowledge Base">
+      <div class="articles-heading-wrap">
+        <div class="articles-badge">📖 வேத ஜோதிட தத்துவ களஞ்சியம்</div>
+        <h2 class="articles-main-title" id="articles-main-title">வேத ஜோதிட அடிப்படைகள் &amp; துல்லிய கணிப்பு முறைகள்
+        </h2>
+        <p class="articles-subtitle" id="articles-subtitle">
+          பழங்கால மகரிஷிகளின் திருக்கணித பஞ்சாங்க முறை, நவாம்ச தத்துவம், திருமணப் பொருத்த விதிமுறைகள் மற்றும் எண் கணித
+          அறிவியல் பற்றிய விரிவான விளக்கங்கள்.
+        </p>
+      </div>
+
+      <div class="articles-grid">
+        <!-- Article 1: Thirukanitha vs Vakya -->
+        <article class="article-card">
+          <div class="article-card-header">
+            <div class="article-icon-box">🪐</div>
+            <h3 class="article-title" id="art1-title">திருக்கணித பஞ்சாங்கம் &amp; கிரக நிலைகளின் துல்லியம்</h3>
+          </div>
+          <div class="article-body" id="art1-body">
+            <p>
+              பாரம்பரிய இந்திய ஜோதிடத்தில் இரு முக்கிய கணிப்பு முறைகள் உள்ளன: வாக்கிய பஞ்சாங்கம் மற்றும் திருக்கணித
+              பஞ்சாங்கம். வானியல் ரீதியாக சூரியன், சந்திரன் மற்றும் நவகிரகங்களின் துல்லியமான அட்சரேகை மற்றும்
+              தீர்க்கரேகை பாகைகளை கணக்கிட திருக்கணித முறையே விஞ்ஞான பூர்வமானது.
+            </p>
+            <p>
+              நாசாவின் எபிமெரிஸ் (NASA JPL Ephemeris) தரவுகளுடன் ஒப்பிடும் போது திருக்கணித கிரக நிலைகள் மில்லி-வினாடிகள்
+              அளவில் ஒத்துப்போகின்றன. நமது குபேர ஆஸ்ட்ரோ கணிப்பான் லஹிரி அயனாம்சத்தை (Lahiri Ayanamsa) அடிப்படையாகக்
+              கொண்டு துல்லியமான லக்னம் மற்றும் நவகிரக பாகைகளை நிமிடங்களில் வழங்குகிறது.
+            </p>
+            <ul class="article-highlight-list">
+              <li>துல்லியமான லஹிரி அயனாம்சம் (Chitrapaksha Ayanamsa)</li>
+              <li>சூரிய உதயம் மற்றும் நள்ளிரவு 12 மணி அடிப்படையிலான கணிப்பு</li>
+              <li>நவகிரக வக்ர, அஸ்தமன மற்றும் உச்ச-நீச நிலைகள்</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Article 2: Rasi vs Navamsa -->
+        <article class="article-card">
+          <div class="article-card-header">
+            <div class="article-icon-box">📜</div>
+            <h3 class="article-title" id="art2-title">ராசி மற்றும் நவாம்ச கட்டங்களின் முக்கியத்துவம்</h3>
+          </div>
+          <div class="article-body" id="art2-body">
+            <p>
+              ஒரு ஜாதகத்தில் ராசி கட்டம் (D1 Chart) என்பது உடலையும், வெளிப்படையான குணாதிசயங்களையும் குறிக்கிறது. ஆனால்
+              ஒரு மனிதனின் உள்ளார்ந்த ஆன்ம பலம், திருமணம் மற்றும் 32 வயதிற்குப் பிந்தைய வாழ்க்கையை தீர்மானிப்பது நவாம்ச
+              கட்டமாகும் (D9 Navamsa Chart).
+            </p>
+            <p>
+              ஒரு கிரகம் ராசி கட்டத்தில் நீசமடைந்திருந்தாலும், நவாம்ச கட்டத்தில் உச்சம் பெற்றால் (Vargottama / Neecha
+              Bhanga) அது அபரிமிதமான யோகங்களை வழங்கும். இதனாலேயே தென்னிந்திய சதுரக் கட்ட அமைப்பில் ராசி மற்றும் நவாம்சம்
+              இரண்டையும் அருகருகே வைத்து ஆய்வு செய்வது அவசியமாகிறது.
+            </p>
+            <ul class="article-highlight-list">
+              <li>வர்கோத்தம நிலைகள் &amp; நீசபங்க ராஜயோகம்</li>
+              <li>16 வர்க்க சக்கரங்களில் தலையாய D9 நவாம்ச கட்டம்</li>
+              <li>விம்சோத்தரி தசா-புத்தி காலங்களின் துல்லிய இருப்பு</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Article 3: 10 & 12 Porutham Science -->
+        <article class="article-card">
+          <div class="article-card-header">
+            <div class="article-icon-box">💍</div>
+            <h3 class="article-title" id="art3-title">திருமணப் பொருத்தம்: 10 பொருத்தங்களின் அறிவியல் பின்னணி</h3>
+          </div>
+          <div class="article-body" id="art3-body">
+            <p>
+              திருமண வாழ்க்கை என்பது வெறும் இரு மனங்களின் சேர்க்கை மட்டுமல்ல; அது இரு வேறு காந்த அலைகளின் மற்றும் மரபணு
+              சார்ந்த உயிரியல் இணக்கமாகும். பழங்கால முனிவர்கள் வகுத்த 10 மற்றும் 12 திருமணப் பொருத்தங்கள் ஆரோக்கியம்,
+              சந்ததி விருத்தி மற்றும் நீடித்த ஒற்றுமையை உறுதி செய்கின்றன.
+            </p>
+            <p>
+              தினப் பொருத்தம் ஆரோக்கியத்தையும், கணப் பொருத்தம் மன இணக்கத்தையும், யோனிப் பொருத்தம் தாம்பத்திய
+              திருப்தியையும், ராசி மற்றும் ரஜ்ஜுப் பொருத்தம் மாங்கல்ய பலத்தையும் குறிக்கின்றன. மேலும் செவ்வாய் தோஷம்,
+              பாவ சாம்யம் மற்றும் தசா சந்தி ஆய்வுகள் திருமணப் பொருத்தத்தின் தூண்களாகும்.
+            </p>
+            <ul class="article-highlight-list">
+              <li>மாங்கல்ய பலம் தரும் சிரசு, கண்ட, நாபி, தொடை ரஜ்ஜு ஆய்வு</li>
+              <li>ஆயுள் மற்றும் ஆரோக்கியத்தை நிர்ணயிக்கும் தினப் பொருத்தம்</li>
+              <li>செவ்வாய் 2, 4, 7, 8, 12 தோஷ விலக்கு மற்றும் பாவ சாம்யம்</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Article 4: Vedic & Chaldean Numerology -->
+        <article class="article-card">
+          <div class="article-card-header">
+            <div class="article-icon-box">🔢</div>
+            <h3 class="article-title" id="art4-title">வேத &amp; சால்டியன் எண் கணித தத்துவங்கள்</h3>
+          </div>
+          <div class="article-body" id="art4-body">
+            <p>
+              பிரபஞ்சத்தில் உள்ள அனைத்து பொருட்களும் ஒரு குறிப்பிட்ட அதிர்வு அலைவரிசையில் (Vibrational Frequency)
+              இயங்குகின்றன. பிறந்த தேதியின் மூல எண் (Root Number) ஒருவரின் இயல்பான குணத்தையும், மொத்த பிறந்த தேதியின்
+              கூட்டுத்தொகையான விதி எண் (Destiny Number) வாழ்க்கையின் இலக்கையும் காட்டுகின்றன.
+            </p>
+            <p>
+              சால்டியன் எண் கணித முறைப்படி ஒவ்வொரு ஆங்கில எழுத்துக்கும் உரிய ஒலி அலை மதிப்பீடுகளை இணைத்து, பெயர் எண்ணை
+              அதிர்ஷ்ட அதிர்வுக்கு மாற்றுவதன் மூலம் தடைகளை வென்று வெற்றியை ஈர்க்க முடிகிறது. இவற்றுடன் அதிர்ஷ்ட
+              நிறங்கள், கிழமைகள் மற்றும் ரத்தினங்கள் வாழ்வியல் ஆற்றலை அதிகரிக்கின்றன.
+            </p>
+            <ul class="article-highlight-list">
+              <li>1 முதல் 9 எண்களுக்கான நவகிரக அதிபதி தத்துவங்கள்</li>
+              <li>பிறவி எண், விதி எண் மற்றும் நாம எண் சமநிலை</li>
+              <li>இணக்கமான நட்பு எண்கள் மற்றும் தவிர்க்க வேண்டிய தினங்கள்</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Comprehensive Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand">
+          <div class="footer-brand-title">
+            <img src="/assets/ganesha.png" alt="Emblem" style="width: 28px; height: 28px; object-fit: contain;">
+            KUBERA <span>ASTRO</span>
+          </div>
+          <p class="footer-bio">
+            100% Free Complete Vedic Astrology System providing authentic Thirukanitha Panchangam planetary longitudes,
+            Rasi & Navamsa square charts, and Vimshottari Dasa-Bhukti analysis.
+          </p>
+          <div style="font-size: 0.78rem; color: var(--accent-gold-bright); font-weight: 700;">
+            🔒 Zero Cloud Storage • 100% Privacy Preserved
+          </div>
+        </div>
+
+        <!-- Col 2: Astrological Tools -->
+        <div>
+          <div class="footer-col-title">Vedic Systems</div>
+          <ul class="footer-links">
+            <li><a href="#birth-details-card" class="footer-link">⚡ Rasi & Navamsa Calculator</a></li>
+            <li><a href="#birth-details-card" class="footer-link">🪐 Planetary Dignities & Degrees</a></li>
+            <li><a href="#birth-details-card" class="footer-link">⏳ Vimshottari Dasa-Bhukti</a></li>
+            <li><a href="#birth-details-card" class="footer-link">📄 High-Res Color PDF Export</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: AdSense Compliance Policies -->
+        <div>
+          <div class="footer-col-title">Legal & Policies</div>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="window.LegalModal?.open('privacy')" class="footer-link">🛡️
+                Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="window.LegalModal?.open('terms')" class="footer-link">📜 Terms of
+                Service</a></li>
+            <li><a href="javascript:void(0)" onclick="window.LegalModal?.open('disclaimer')" class="footer-link">⚖️
+                Astrological Disclaimer</a></li>
+            <li><a href="javascript:void(0)" onclick="window.LegalModal?.open('about')" class="footer-link">ℹ️ About
+                Us</a></li>
+            <li><a href="javascript:void(0)" onclick="window.LegalModal?.open('contact')" class="footer-link">📞 Contact
+                Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Appreciation & Direct Support -->
+        <div>
+          <div class="footer-col-title">Direct Patronage</div>
+          <p style="font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); margin-bottom: 0.75rem;">
+            Enjoying this service? Our tools are 100% free with no paywalls. Support continued development voluntarily:
+          </p>
+          <button type="button" class="btn-patronage" onclick="window.PatronageModal?.openModal()"
+            style="font-size: 0.8rem; padding: 0.45rem 0.85rem;">
+            ⭐ Pay me if you find worth
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Kubera Astro • <span style="color:var(--accent-gold); font-weight:700; cursor:pointer;"
+            onclick="window.PWAController?.forceUpdateAndClearCache()" title="Click to refresh latest build">Version 5.0
+            (Latest) 🔄</span>. All rights reserved.
+        </div>
+        <div>
+          <a href="https://kuberanet.com" target="_blank" rel="noopener noreferrer" class="agency-credit">
+            Powered by <span>Kubera Tech</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Legal & Compliance Modal (Privacy, Terms, Disclaimer, About, Contact) -->
+  <div id="legal-modal" class="legal-modal-backdrop">
+    <div class="legal-modal-card">
+      <div class="legal-modal-header">
+        <h3 id="legal-modal-title" class="legal-modal-title">Legal Notice</h3>
+        <button type="button" class="btn-modal-close" onclick="window.LegalModal?.close()"
+          style="position: static; width: 32px; height: 32px; font-size: 1.1rem;">✕</button>
+      </div>
+      <div id="legal-modal-body" class="legal-modal-body">
+        <!-- Dynamically populated by legal_modal.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Voluntary Patronage Modal ("Pay me if you feel I am worth it") -->
+  <div id="patronage-modal" class="patron-modal-backdrop">
+    <div class="patron-card">
+      <button class="btn-modal-close" onclick="window.PatronageModal?.closeModal()">✕</button>
+      <div class="patron-badge">⭐ Value First • Direct Patronage</div>
+      <h3 class="patron-title" style="font-size: 1.25rem;">Pay me if you find worth</h3>
+      <div id="patron-modal-tagline"
+        style="font-size: 1rem; font-weight: 800; color: var(--accent-gold-bright); margin-bottom: 0.5rem;">
+        தகுதி இருந்தால் மட்டும் பணம் செலுத்தவும்
+      </div>
+      <p class="patron-subtitle" style="font-size: 0.8rem; line-height: 1.5;">
+        இந்த ஜாதக கணிப்பு சேவை 100% இலவசமாக உங்களுக்காக உருவாக்கப்பட்டுள்ளது. நீங்கள் பெற்ற இந்த ஜாதக கணிப்பும்
+        துல்லியமும் உண்மையாகவே பயனுள்ளது என்றும், எங்கள் உழைப்பிற்கு மதிப்புண்டு என்றும் நீங்கள் உணர்ந்தால் மட்டுமே
+        உங்கள் விருப்பத்திற்குரிய தொகையை நேரடியாக செலுத்தலாம்.
+      </p>
+
+      <div class="qr-box-wrap">
+        <img id="patron-qr-image" class="qr-img" src="/assets/gpay_qr.jpg" alt="GPay UPI QR">
+      </div>
+
+      <div class="upi-id-badge">
+        <span>UPI:</span> <span>sathiyaraj777-1@okicici</span>
+      </div>
+
+      <div class="chip-grid">
+        <button class="chip-btn" data-amt="21" onclick="window.PatronageModal?.selectAmount(21, this)">₹21</button>
+        <button class="chip-btn is-selected" data-amt="51"
+          onclick="window.PatronageModal?.selectAmount(51, this)">₹51</button>
+        <button class="chip-btn" data-amt="101" onclick="window.PatronageModal?.selectAmount(101, this)">₹101</button>
+        <button class="chip-btn" data-amt="501" onclick="window.PatronageModal?.selectAmount(501, this)">₹501</button>
+      </div>
+
+      <!-- Custom Desired Amount Input -->
+      <div class="custom-amount-wrap"
+        style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+        <span style="font-size: 0.82rem; font-weight: 700; color: var(--accent-gold-bright);" id="lbl-custom-amt">உங்கள்
+          விருப்பத் தொகை:</span>
+        <div style="position: relative; width: 140px;">
+          <span
+            style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-weight: 800; color: var(--accent-gold);">₹</span>
+          <input type="number" id="input-custom-amount" min="1" max="100000" placeholder="51"
+            style="width: 100%; padding: 0.4rem 0.6rem 0.4rem 1.6rem; border-radius: var(--radius-sm); border: 1.5px solid var(--accent-gold); background: var(--bg-input); color: var(--text-primary); font-weight: 800; font-size: 0.95rem; outline: none;"
+            oninput="window.PatronageModal?.onCustomAmountInput(this.value)">
+        </div>
+      </div>
+
+      <div class="modal-action-row" style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
+        <a id="btn-direct-upi-intent" class="btn-upi-intent" href="#" style="flex: 1;">
+          ⚡ GPay / PhonePe / Paytm மூலம் ₹51 செலுத்தவும்
+        </a>
+        <button type="button" class="btn-modal-cancel" onclick="window.PatronageModal?.closeModal()"
+          style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); font-weight: 700; font-size: 0.88rem; padding: 0.75rem 1.1rem; border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition-smooth);">
+          Cancel
+        </button>
+      </div>
+      <div style="margin-top: 0.65rem; font-size: 0.68rem; color: var(--text-muted);">
+        Google Pay • PhonePe • Paytm • BHIM UPI • Direct Developer Support
+      </div>
+    </div>
+  </div>
+
+  <!-- Production Obfuscated Bundle -->
+  <script src="/dist/app.bundle.min.js?v=4.1"></script>
+
+
+  <!-- Floating PWA Update Notification Banner -->
+  <div id="pwa-update-banner" class="pwa-update-banner" style="display: none;">
+    <span class="pwa-update-text">✨ புதிய பதிப்பு கிடைக்கிறது! (New Update Available)</span>
+    <button type="button" class="btn-update-now" onclick="window.PWAController?.forceUpdateAndClearCache()">
+      🔄 Update Now
+    </button>
+    <button type="button" onclick="window.PWAController?.hideUpdateBanner()"
+      style="background:none; border:none; color:#94a3b8; font-size:1rem; cursor:pointer; padding:0 4px;">✕</button>
+  </div>
+
+</body>
+
+</html>

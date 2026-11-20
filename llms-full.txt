@@ -1,0 +1,52 @@
+# Kubera Astro - Complete Technical Architecture & Astrological Precision Guide
+
+This document provides extensive architectural context, mathematical models, and feature specifications for Large Language Models (LLMs), AI search engines (Perplexity, ChatGPT Search, Gemini, Claude, Copilot), and AI crawlers exploring Kubera Astro.
+
+## 1. Executive Overview
+- **Product Name**: Kubera Astro (குபேரா ஜாதகம்)
+- **Tagline**: 100% Free Complete Vedic Horoscope
+- **Publisher**: Kubera Tech (https://kuberanet.com)
+- **Application URL**: https://kuberaastro.web.app/
+- **Cost**: Completely Free Forever, Zero Paywalls, Zero Registration Required.
+- **License/Usage**: Open web service for individuals, astrologers, and researchers.
+
+## 2. Astronomical & Astrological Principles
+Kubera Astro executes true sidereal (Nirayana) astronomical calculations compliant with the Indian national standard Thirukanitha Panchangam:
+
+### Ayanamsa Standard
+- **Method**: Chitra Paksha / Lahiri Ayanamsa (`swe.SIDM_LAHIRI`).
+- **Engine**: Swiss Ephemeris C/Python extension (`swisseph`) for planetary orbital positions.
+
+### Planetary Inclusions
+1. **Lagna (Ascendant)**: Precise degree, minute, and second derived from local sidereal time and Placidus / Indian house cusp math.
+2. **Nava Grahas (Nine Classical Planets)**: Sun (சூரியன்), Moon (சந்திரன்), Mars (செவ்வாய்), Mercury (புதன்), Jupiter (குரு), Venus (சுக்கிரன்), Saturn (சனி), Rahu (ராகு - Mean Node), Ketu (கேது - Mean Node + 180°).
+3. **Upagrahas**: Maandi (மாந்தி) calculated using classical Tamil ghatika proportion rules (day and night ghatis).
+4. **Planetary Dignities (நிலை)**: Exalted (உச்சம்), Debilitated (நீச்சம்), Own House (ஆட்சி), Friendly (நட்பு), Enemy (பகை), and Neutral (சமம்).
+5. **Retrograde Detection**: Negative speed flag identification marked with `(வ)` / `(R)`.
+
+### Panchangam Components (பஞ்சாங்கம்)
+- **Vedic Day (கிழமை)**: Evaluated from local sunrise. Births before sunrise are assigned the preceding Vedic day.
+- **Thithi & Paksham**: Moon-Sun longitude differential divided into 12-degree arcs across Shukla (வளர்பிறை) and Krishna (தேய்பிறை) pakshas.
+- **Nakshatra & Pada**: Moon position divided into 13°20' nakshatra spans and 3°20' pada quarters (1 to 4).
+- **Yogi & Avayogi**: Calculated points and their planetary rulers.
+- **Dinman Yogam**: Siddha, Amrita, and Marana yoga classification.
+- **Karanam**: Half-tithi cyclical indicators.
+- **Thithi Soonyam**: Void signs associated with birth thithi.
+
+### Charts Generated
+- **Rasi Chart (ராசி கட்டம்)**: South Indian fixed-zodiac square grid mapping all planets to the 12 signs from Aries (மேஷம்) through Pisces (மீனம்).
+- **Navamsa Chart (நவாம்சம்)**: D9 harmonic divisional chart indicating inner strength and matrimonial prospects.
+
+### Vimshottari Dasa System
+- 120-year cycle calculating Moon's natal star lord, balance at birth (Years, Months, Days), and real-time running Dasa, Bhukti, and Antharam.
+
+## 3. Privacy & Zero-Trust Architecture
+- **Zero Cloud Database Storage**: User birth details (Name, Date, Time, Coordinates) are computed on-the-fly and never retained in Firestore, RTDB, or third-party databases.
+- **Anonymous Cryptographic Bridge**: Requests to computational endpoints utilize ephemeral anonymous tokens without requiring user identity disclosure.
+
+## 4. Developer & Support Contact
+- **Engineering Agency**: Kubera Tech (https://kuberanet.com)
+- **Lead Architect**: Sathiyaraj Arumugam
+- **Direct Email**: admin@kuberanet.com / support@kuberanet.com / sathiyaraj777.coder@gmail.com
+- **Headquarters**: Polur, Tamil Nadu, India
+

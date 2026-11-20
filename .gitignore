@@ -1,0 +1,9 @@
+*.txt
+!ads.txt
+!robots.txt
+!llms.txt
+!llms-full.txt
+.firebase/
+*.log
+.DS_Store
+Thumbs.db

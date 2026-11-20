@@ -1,0 +1,183 @@
+/**
+ * KUBERA ASTRO - VOLUNTARY PATRONAGE & APPRECIATION MODAL
+ * "Pay me if you feel I am worth it"
+ * Strictly under 300 lines compliant (Rule 6).
+ */
+.patron-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.patron-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.patron-card {
+  background: linear-gradient(145deg, #0e152e 0%, #070a14 100%);
+  border: 1.5px solid var(--accent-gold);
+  border-radius: var(--radius-lg);
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.2rem 1.5rem 1.5rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), var(--shadow-gold);
+  position: relative;
+  text-align: center;
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.patron-modal-backdrop.is-active .patron-card {
+  transform: scale(1);
+}
+
+.btn-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(244, 63, 94, 0.15);
+  border: 1.5px solid var(--accent-rose);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 900;
+  z-index: 10;
+  transition: var(--transition-smooth);
+}
+
+.btn-modal-close:hover {
+  background: var(--accent-rose);
+  color: #fff;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.6);
+}
+
+.patron-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold-bright);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.patron-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.patron-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+  line-height: 1.45;
+}
+
+.qr-box-wrap {
+  background: #ffffff;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  display: inline-block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--accent-gold);
+}
+
+.qr-img {
+  width: 170px;
+  height: 170px;
+  display: block;
+}
+
+.upi-id-badge {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-gold-bright);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Quick Contribution Chips */
+.chip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.45rem;
+  margin-bottom: 1.1rem;
+}
+
+.chip-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.4rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.chip-btn:hover, .chip-btn.is-selected {
+  background: var(--accent-gold);
+  color: #070a14;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}
+
+.btn-upi-intent {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+}
+
+.btn-upi-intent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.6);
+}
+

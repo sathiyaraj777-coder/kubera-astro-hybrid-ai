@@ -1,0 +1,64 @@
+/**
+ * KUBERA ASTRO - DESIGN SYSTEM TOKENS & VARIABLES
+ * Dark & Light Theme Variables with Vedic Gold Accents
+ * Strictly under 300 lines compliant (Rule 6).
+ */
+:root {
+  --bg-primary: #070a14;
+  --bg-secondary: #0d1326;
+  --bg-card: rgba(13, 19, 38, 0.75);
+  --bg-card-hover: rgba(20, 29, 58, 0.85);
+  --bg-input: #0a0f21;
+  --border-subtle: rgba(245, 158, 11, 0.2);
+  --border-glow: rgba(245, 158, 11, 0.5);
+  --border-cyan: rgba(56, 189, 248, 0.35);
+
+  --accent-gold: #f59e0b;
+  --accent-gold-bright: #fbbf24;
+  --accent-saffron: #f97316;
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+  --accent-cyan: #38bdf8;
+  --accent-purple: #a855f7;
+
+  --text-white: #ffffff;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-gold: #fbbf24;
+
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-tamil: 'Mukta Malar', 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 158, 11, 0.08);
+  --shadow-gold: 0 0 25px rgba(245, 158, 11, 0.35);
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: rgba(241, 245, 249, 0.98);
+  --bg-input: #ffffff;
+  --border-subtle: rgba(217, 119, 6, 0.3);
+  --border-glow: rgba(217, 119, 6, 0.6);
+  --border-cyan: rgba(14, 165, 233, 0.4);
+
+  --accent-gold: #d97706;
+  --accent-gold-bright: #b45309;
+  --text-white: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-gold: #b45309;
+
+  --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 0 15px rgba(217, 119, 6, 0.12);
+}
